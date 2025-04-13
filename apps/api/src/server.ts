@@ -7,7 +7,7 @@ export const createServer = (): Express => {
   const app = express();
   app
     .disable("x-powered-by")
-    .use(morgan("dev"))
+    .use(morgan(process.env.NODE_ENV !== 'production' ? "dev" : "combined"))
     .use(urlencoded({ extended: true }))
     .use(json())
     .use(cors())
