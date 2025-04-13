@@ -1,29 +1,15 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
-import { Button } from "@repo/ui"
-
 import "./style.css";
-import typescriptLogo from "/typescript.svg";
-// import { Header, Counter } from "@repo/ui";
 
-const App = () => (
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" className="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img
-        src={typescriptLogo}
-        className="logo vanilla"
-        alt="TypeScript logo"
-      />
-    </a>
-    {/* <Header title="Web" /> */}
-    <Button>Hello </Button>
-    <div className="card">
-      {/* <Counter /> */}
-    </div>
-  </div>
+import { createRoot } from "react-dom/client";
+import { ApolloProvider } from "@apollo/client";
+import createClient from './apolloClient'
+import App from "./app";
+
+const client = createClient()
+
+createRoot(document.getElementById("app")!).render(
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>
 );
-
-createRoot(document.getElementById("app")!).render(<App />);

@@ -8,23 +8,27 @@ import cors from "cors";
 
 import router from "./router"
 import getSchema from "./graphql";
+import { expressMiddleware } from "@apollo/server/express4";
 
 export const createServer = async (): Promise<Express> => {
   const app = express();
-
-  const schema = await getSchema()
-
-  const server = new ApolloServer({ schema });
-
-
 
   app
     .disable("x-powered-by")
     .use(morgan(process.env.NODE_ENV !== 'production' ? "dev" : "combined"))
     .use(urlencoded({ extended: true }))
-    .use(json())
-    .use(cors())
-    .use(router)
+
+
+  app.use(router)
+
+  const schema = await getSchema()
+
+  const server = new ApolloServer({ schema });
+
+  await server.start()
+
+  app.use('/', cors<cors.CorsRequest>(), express.json(), expressMiddleware(server))
+
 
 
   return app;

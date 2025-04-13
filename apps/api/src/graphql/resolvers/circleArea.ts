@@ -1,18 +1,15 @@
 import { Arg, Float, Query, Resolver } from "type-graphql";
 import { Service } from "typedi";
 import { CircleAreaInput } from "../inputs/circleArea";
+import { getAreaOfCircle } from "../../logic/circle";
 
 @Service()
 @Resolver()
 class CircleAreaResolver {
-
-    @Query(() => Float)
-    areaOfCircle(@Arg('args') args: CircleAreaInput): number {
-
-        return 2 * Math.PI * args.radius
+    @Query(type => Float)
+    areaOfCircle(@Arg('input', () => CircleAreaInput) areaInput: CircleAreaInput): number {
+        return getAreaOfCircle(areaInput.radius)
     }
-
-
 }
 
 export default CircleAreaResolver
