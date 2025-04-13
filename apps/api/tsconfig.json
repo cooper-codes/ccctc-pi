@@ -3,10 +3,22 @@
   "compilerOptions": {
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "lib": ["ES2015"],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "ESNext",
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "lib": [
+      "ES2020"
+    ],
+    "types": [
+      "node"
+    ]
   },
-  "exclude": ["node_modules"],
-  "include": ["src"]
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src"
+  ]
 }
