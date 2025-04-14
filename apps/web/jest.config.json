@@ -1,0 +1,20 @@
+{
+    "roots": [
+        "<rootDir>"
+    ],
+    "moduleFileExtensions": [
+        "js",
+        "jsx",
+        "ts",
+        "tsx"
+    ],
+    "modulePathIgnorePatterns": [
+        "<rootDir>/test/__fixtures__",
+        "<rootDir>/node_modules",
+        "<rootDir>/dist"
+    ],
+    "preset": "ts-jest",
+    "transform": {
+        ".(ts|tsx)": "ts-jest"
+    }
+}

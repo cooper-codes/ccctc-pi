@@ -1,7 +1,7 @@
 import { Arg, Float, Query, Resolver } from "type-graphql";
 import { Service } from "typedi";
 import { CircleAreaInput } from "../inputs/circleArea";
-import { getAreaOfCircle } from "../../logic/circle";
+import { getAreaOfCircle } from "../../logic/areaOfCircle";
 
 @Service()
 @Resolver()
