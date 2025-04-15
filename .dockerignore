@@ -1,1 +1,7 @@
 node_modules
+garden.yml
+*.md
+*.json
+.turbo
+Dockerfile
+schema.gql

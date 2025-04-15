@@ -1,0 +1,13 @@
+apiVersion: garden.io/v1
+kind: Project
+name: ccctc-app
+
+defaultEnvironment: local
+
+environments:
+  - name: local
+    defaultNamespace: ccctc-app
+
+providers:
+  - name: local-kubernetes
+    environments: [local]

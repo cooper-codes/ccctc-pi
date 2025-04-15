@@ -1,0 +1,118 @@
+{"msg":"Resolving providers...","section":"providers                 →","timestamp":"2025-04-15T00:40:36.194Z","level":"info"}
+{"msg":"Configuring provider...","section":"exec                      →","timestamp":"2025-04-15T00:40:36.472Z","level":"info"}
+{"msg":"Configuring provider...","section":"container                 →","timestamp":"2025-04-15T00:40:36.475Z","level":"debug"}
+{"msg":"Configuring provider...","section":"templated                 →","timestamp":"2025-04-15T00:40:36.475Z","level":"debug"}
+{"msg":"Provider configured","section":"exec                      →","timestamp":"2025-04-15T00:40:36.485Z","level":"info"}
+{"msg":"Provider configured","section":"container                 →","timestamp":"2025-04-15T00:40:36.486Z","level":"debug"}
+{"msg":"Provider configured","section":"templated                 →","timestamp":"2025-04-15T00:40:36.486Z","level":"debug"}
+{"msg":"Provider status cached","section":"exec                      →","timestamp":"2025-04-15T00:40:36.503Z","level":"info"}
+{"msg":"resolve provider exec is ready.","section":"providers                 →","timestamp":"2025-04-15T00:40:36.504Z","level":"verbose"}
+{"msg":"Provider status cached","section":"container                 →","timestamp":"2025-04-15T00:40:36.505Z","level":"debug"}
+{"msg":"resolve provider container is ready.","section":"providers                 →","timestamp":"2025-04-15T00:40:36.506Z","level":"verbose"}
+{"msg":"Configuring provider...","section":"local-kubernetes          →","timestamp":"2025-04-15T00:40:36.507Z","level":"info"}
+{"msg":"Provider status cached","section":"templated                 →","timestamp":"2025-04-15T00:40:36.510Z","level":"debug"}
+{"msg":"resolve provider templated is ready.","section":"providers                 →","timestamp":"2025-04-15T00:40:36.510Z","level":"verbose"}
+{"msg":"Using current context: docker-desktop","section":"local-kubernetes          →","timestamp":"2025-04-15T00:40:36.650Z","level":"info"}
+{"msg":"Provider configured","section":"local-kubernetes          →","timestamp":"2025-04-15T00:40:36.652Z","level":"info"}
+{"msg":"Preparing environment","section":"local-kubernetes          →","timestamp":"2025-04-15T00:40:36.654Z","level":"info"}
+{"msg":"An attempt to get kind version failed with Error: Failed to run kind: Error: Command failed with ENOENT: kind version\nspawn kind ENOENT","section":"local-kubernetes          →","timestamp":"2025-04-15T00:40:36.709Z","level":"debug"}
+{"msg":"Kubernetes: Getting API resource info for group apiextensions.k8s.io/v1","section":"local-kubernetes          →","timestamp":"2025-04-15T00:40:36.860Z","level":"debug"}
+{"msg":"An attempt to get k3s addons crd failed with Error: Request failed with response code 404: Kubernetes API: https://kubernetes.docker.internal:6443/apis/apiextensions.k8s.io/v1/customresourcedefinitions/addons.k3s.cattle.io. Message from the API: customresourcedefinitions.apiextensions.k8s.io \"addons.k3s.cattle.io\" not found","section":"local-kubernetes          →","timestamp":"2025-04-15T00:40:36.887Z","level":"debug"}
+{"msg":"Kubernetes: Getting API resource info for group apps/v1","section":"local-kubernetes          →","timestamp":"2025-04-15T00:40:37.062Z","level":"debug"}
+{"msg":"Status of ingress controller default-backend: [object Object]","section":"local-kubernetes          →","timestamp":"2025-04-15T00:40:37.098Z","level":"debug"}
+{"msg":"Provider ready","section":"local-kubernetes          →","timestamp":"2025-04-15T00:40:37.099Z","level":"info"}
+{"msg":"resolve provider local-kubernetes is ready.","section":"providers                 →","timestamp":"2025-04-15T00:40:37.101Z","level":"verbose"}
+{"msg":"Finished resolving providers (took 0.9 sec)","section":"providers                 →","timestamp":"2025-04-15T00:40:37.102Z","level":"info"}
+{"msg":"Some provider statuses were cached. Run with --force-refresh to force a refresh of provider statuses.","section":"providers                 →","timestamp":"2025-04-15T00:40:37.103Z","level":"info"}
+{"msg":"Resolving actions and modules...","section":"graph                     →","timestamp":"2025-04-15T00:40:37.103Z","level":"info"}
+{"msg":"Building graph from 4 action configs and 0 group configs","section":"graph                     →","timestamp":"2025-04-15T00:40:37.109Z","level":"debug"}
+{"msg":"Retained 4 configs","section":"graph                     →","timestamp":"2025-04-15T00:40:37.109Z","level":"debug"}
+{"msg":"Got 4 action configs without action filter","section":"graph                     →","timestamp":"2025-04-15T00:40:37.137Z","level":"debug"}
+{"msg":"Finding minimal roots for 1 paths","section":"graph                     →","timestamp":"2025-04-15T00:40:37.137Z","level":"debug"}
+{"msg":"Scanning Deploy action api root at /home/graham/Code/CCCTC\n  → Includes: (none)\n  → Excludes: (none)","section":"git                       →","timestamp":"2025-04-15T00:40:37.144Z","level":"verbose"}
+{"msg":"Found 260 files in Deploy action api root /home/graham/Code/CCCTC (took 0.27 sec)","section":"git                       →","timestamp":"2025-04-15T00:40:37.411Z","level":"verbose"}
+{"msg":"Found 260 files in path /home/graham/Code/CCCTC, filtering by 1 include and 5 exclude globs","section":"graph                     →","timestamp":"2025-04-15T00:40:37.414Z","level":"debug"}
+{"msg":"Include globs: **/*","section":"graph                     →","timestamp":"2025-04-15T00:40:37.414Z","level":"debug"}
+{"msg":"Exclude globs: **/.garden/**/*, .garden/**/*, .git/**/*, .gitmodules, debug-info*/**","section":"graph                     →","timestamp":"2025-04-15T00:40:37.414Z","level":"debug"}
+{"msg":"Found 260 files in path /home/graham/Code/CCCTC after glob matching","section":"graph                     →","timestamp":"2025-04-15T00:40:37.441Z","level":"debug"}
+{"msg":"Finished resolving graph (took 0.3 sec)","section":"graph                     →","timestamp":"2025-04-15T00:40:37.444Z","level":"info"}
+{"msg":"Finished initializing Garden (took 1.4 sec)","section":"garden                    →","timestamp":"2025-04-15T00:40:37.445Z","level":"info"}
+{"msg":"resolve Build type=container name=api is ready.","section":"build.api                 →","timestamp":"2025-04-15T00:40:37.465Z","level":"debug"}
+{"msg":"resolve Build type=container name=web is ready.","section":"build.web                 →","timestamp":"2025-04-15T00:40:37.466Z","level":"debug"}
+{"msg":"resolve Deploy type=container name=api is ready.","section":"deploy.api                →","timestamp":"2025-04-15T00:40:37.473Z","level":"debug"}
+{"msg":"Getting status for Deploy api (type container) at version v-167c54019d...","section":"deploy.api                →","timestamp":"2025-04-15T00:40:37.474Z","level":"info"}
+{"msg":"resolve Deploy type=container name=web is ready.","section":"deploy.web                →","timestamp":"2025-04-15T00:40:37.485Z","level":"debug"}
+{"msg":"Getting status for Deploy web (type container) at version v-eb19a11cb1...","section":"deploy.web                →","timestamp":"2025-04-15T00:40:37.486Z","level":"info"}
+{"msg":"Kubernetes: Getting API resource info for group networking.k8s.io/v1","section":"deploy.api                →","timestamp":"2025-04-15T00:40:37.497Z","level":"debug"}
+{"msg":"Kubernetes: Getting API resource info for group v1","section":"deploy.api                →","timestamp":"2025-04-15T00:40:37.528Z","level":"debug"}
+{"msg":"Getting currently deployed resource statuses...","section":"deploy.api                →","timestamp":"2025-04-15T00:40:37.573Z","level":"debug"}
+{"msg":"Comparing expected and deployed resources...","section":"deploy.api                →","timestamp":"2025-04-15T00:40:37.573Z","level":"debug"}
+{"msg":"Resource api is not a superset of deployed resource","section":"deploy.api                →","timestamp":"2025-04-15T00:40:37.575Z","level":"debug"}
+{"msg":"Status is outdated, api will be deployed","section":"deploy.api                →","timestamp":"2025-04-15T00:40:37.576Z","level":"info"}
+{"msg":"Getting status for Build api (type container) at version v-2f9beaeb00...","section":"build.api                 →","timestamp":"2025-04-15T00:40:37.579Z","level":"info"}
+{"msg":"Getting currently deployed resource statuses...","section":"deploy.web                →","timestamp":"2025-04-15T00:40:37.582Z","level":"debug"}
+{"msg":"Spawning '/home/graham/.garden/tools/docker/2a4740635b268a11/docker/docker images api:v-ce69177dde -q' in /home/graham/Code/CCCTC","section":"build.api                 →","timestamp":"2025-04-15T00:40:37.587Z","level":"debug"}
+{"msg":"Status is not ready, api will be built","section":"build.api                 →","timestamp":"2025-04-15T00:40:37.612Z","level":"info"}
+{"msg":"Building api (type container) at version v-2f9beaeb00...","section":"build.api                 →","timestamp":"2025-04-15T00:40:37.614Z","level":"info"}
+{"msg":"Syncing sources (259 files)...","section":"build.api                 →","timestamp":"2025-04-15T00:40:37.616Z","level":"verbose"}
+{"msg":"Syncing 259 files from . to .garden/build/api (and removing any extraneous files)","section":"build.api                 →","timestamp":"2025-04-15T00:40:37.626Z","level":"debug"}
+{"msg":"Status is unhealthy, web will be deployed","section":"deploy.web                →","timestamp":"2025-04-15T00:40:37.738Z","level":"info"}
+{"msg":"Getting status for Build web (type container) at version v-9b5124f1c6...","section":"build.web                 →","timestamp":"2025-04-15T00:40:37.740Z","level":"info"}
+{"msg":"Spawning '/home/graham/.garden/tools/docker/2a4740635b268a11/docker/docker images web:v-810a0edc10 -q' in /home/graham/Code/CCCTC","section":"build.web                 →","timestamp":"2025-04-15T00:40:37.742Z","level":"debug"}
+{"msg":"Status is not ready, web will be built","section":"build.web                 →","timestamp":"2025-04-15T00:40:37.776Z","level":"info"}
+{"msg":"Building web (type container) at version v-9b5124f1c6...","section":"build.web                 →","timestamp":"2025-04-15T00:40:37.777Z","level":"info"}
+{"msg":"Syncing sources (259 files)...","section":"build.web                 →","timestamp":"2025-04-15T00:40:37.778Z","level":"verbose"}
+{"msg":"Syncing 259 files from . to .garden/build/web (and removing any extraneous files)","section":"build.web                 →","timestamp":"2025-04-15T00:40:37.783Z","level":"debug"}
+{"msg":"Done syncing sources (took 0.1 sec)","section":"build.web                 →","timestamp":"2025-04-15T00:40:37.852Z","level":"verbose"}
+{"msg":"Spawning '/home/graham/.garden/tools/standalone-progressui/b72d1f26ff8c3a80/standalone-progressui-linux-amd64 ' in /home/graham/.garden/tools/standalone-progressui/b72d1f26ff8c3a80","section":"build.web                 →","timestamp":"2025-04-15T00:40:37.921Z","level":"debug"}
+{"msg":"Building web:v-810a0edc10...","section":"build.web                 →","timestamp":"2025-04-15T00:40:37.924Z","level":"info"}
+{"msg":"Spawning '/home/graham/.garden/tools/docker/2a4740635b268a11/docker/docker buildx build --build-arg GARDEN_MODULE_VERSION=v-810a0edc10 --build-arg GARDEN_ACTION_VERSION=v-810a0edc10 --target web --progress rawjson --metadata-file /tmp/garden-build-94867W9ghBH/metadata-file.json --tag web:v-810a0edc10 --file /home/graham/Code/CCCTC/.garden/build/web/Dockerfile /home/graham/Code/CCCTC/.garden/build/web' in /home/graham/Code/CCCTC/.garden/build/web","section":"build.web                 →","timestamp":"2025-04-15T00:40:37.926Z","level":"debug"}
+{"msg":"Done syncing sources (took 0.4 sec)","section":"build.api                 →","timestamp":"2025-04-15T00:40:37.998Z","level":"verbose"}
+{"msg":"Spawning '/home/graham/.garden/tools/standalone-progressui/b72d1f26ff8c3a80/standalone-progressui-linux-amd64 ' in /home/graham/.garden/tools/standalone-progressui/b72d1f26ff8c3a80","section":"build.api                 →","timestamp":"2025-04-15T00:40:38.000Z","level":"debug"}
+{"msg":"Building api:v-ce69177dde...","section":"build.api                 →","timestamp":"2025-04-15T00:40:38.002Z","level":"info"}
+{"msg":"Spawning '/home/graham/.garden/tools/docker/2a4740635b268a11/docker/docker buildx build --build-arg GARDEN_MODULE_VERSION=v-ce69177dde --build-arg GARDEN_ACTION_VERSION=v-ce69177dde --target api --progress rawjson --metadata-file /tmp/garden-build-3341f213rtg/metadata-file.json --tag api:v-ce69177dde --file /home/graham/Code/CCCTC/.garden/build/api/Dockerfile /home/graham/Code/CCCTC/.garden/build/api' in /home/graham/Code/CCCTC/.garden/build/api","section":"build.api                 →","timestamp":"2025-04-15T00:40:38.004Z","level":"debug"}
+{"msg":"#1 [internal] load build definition from Dockerfile","section":"build.web                 →","timestamp":"2025-04-15T00:40:38.419Z","level":"verbose"}
+{"msg":"#1 transferring dockerfile: 612B done","section":"build.web                 →","timestamp":"2025-04-15T00:40:38.419Z","level":"verbose"}
+{"msg":"#1 DONE 0.0s","section":"build.web                 →","timestamp":"2025-04-15T00:40:38.420Z","level":"verbose"}
+{"msg":"#2 [internal] load metadata for docker.io/library/node:22-slim","section":"build.web                 →","timestamp":"2025-04-15T00:40:38.420Z","level":"verbose"}
+{"msg":"#1 [internal] load build definition from Dockerfile","section":"build.api                 →","timestamp":"2025-04-15T00:40:38.423Z","level":"verbose"}
+{"msg":"#1 transferring dockerfile: 612B done","section":"build.api                 →","timestamp":"2025-04-15T00:40:38.424Z","level":"verbose"}
+{"msg":"#1 DONE 0.0s","section":"build.api                 →","timestamp":"2025-04-15T00:40:38.424Z","level":"verbose"}
+{"msg":"#2 [internal] load metadata for docker.io/library/node:22-slim","section":"build.api                 →","timestamp":"2025-04-15T00:40:38.424Z","level":"verbose"}
+{"msg":"#2 DONE 0.5s","section":"build.api                 →","timestamp":"2025-04-15T00:40:38.756Z","level":"verbose"}
+{"msg":"#2 DONE 0.5s","section":"build.web                 →","timestamp":"2025-04-15T00:40:38.758Z","level":"verbose"}
+{"msg":"#3 [internal] load .dockerignore","section":"build.web                 →","timestamp":"2025-04-15T00:40:38.860Z","level":"verbose"}
+{"msg":"#3 transferring context: 104B done","section":"build.web                 →","timestamp":"2025-04-15T00:40:38.860Z","level":"verbose"}
+{"msg":"#3 DONE 0.0s","section":"build.web                 →","timestamp":"2025-04-15T00:40:38.861Z","level":"verbose"}
+{"msg":"#4 [base 1/2] FROM docker.io/library/node:22-slim@sha256:1c18d9ab3af4585870b92e4dbc5cac5a0dc77dd13df1a5905cea89fc720eb05b","section":"build.web                 →","timestamp":"2025-04-15T00:40:38.861Z","level":"verbose"}
+{"msg":"#4 resolve docker.io/library/node:22-slim@sha256:1c18d9ab3af4585870b92e4dbc5cac5a0dc77dd13df1a5905cea89fc720eb05b 0.0s done","section":"build.web                 →","timestamp":"2025-04-15T00:40:38.861Z","level":"verbose"}
+{"msg":"#4 DONE 0.0s","section":"build.web                 →","timestamp":"2025-04-15T00:40:38.861Z","level":"verbose"}
+{"msg":"#5 [internal] load build context","section":"build.web                 →","timestamp":"2025-04-15T00:40:38.861Z","level":"verbose"}
+{"msg":"#5 transferring context: 5.66kB done","section":"build.web                 →","timestamp":"2025-04-15T00:40:38.861Z","level":"verbose"}
+{"msg":"#5 DONE 0.0s","section":"build.web                 →","timestamp":"2025-04-15T00:40:38.861Z","level":"verbose"}
+{"msg":"#3 [internal] load .dockerignore","section":"build.api                 →","timestamp":"2025-04-15T00:40:38.906Z","level":"verbose"}
+{"msg":"#3 transferring context: 104B done","section":"build.api                 →","timestamp":"2025-04-15T00:40:38.907Z","level":"verbose"}
+{"msg":"#3 DONE 0.0s","section":"build.api                 →","timestamp":"2025-04-15T00:40:38.907Z","level":"verbose"}
+{"msg":"#4 [base 1/2] FROM docker.io/library/node:22-slim@sha256:1c18d9ab3af4585870b92e4dbc5cac5a0dc77dd13df1a5905cea89fc720eb05b","section":"build.api                 →","timestamp":"2025-04-15T00:40:38.907Z","level":"verbose"}
+{"msg":"#4 resolve docker.io/library/node:22-slim@sha256:1c18d9ab3af4585870b92e4dbc5cac5a0dc77dd13df1a5905cea89fc720eb05b 0.0s done","section":"build.api                 →","timestamp":"2025-04-15T00:40:38.907Z","level":"verbose"}
+{"msg":"#4 DONE 0.0s","section":"build.api                 →","timestamp":"2025-04-15T00:40:38.907Z","level":"verbose"}
+{"msg":"#5 [internal] load build context","section":"build.api                 →","timestamp":"2025-04-15T00:40:38.908Z","level":"verbose"}
+{"msg":"#5 transferring context: 115.73kB 0.1s done","section":"build.api                 →","timestamp":"2025-04-15T00:40:38.908Z","level":"verbose"}
+{"msg":"#6 [base 2/2] RUN corepack enable","section":"build.web                 →","timestamp":"2025-04-15T00:40:39.018Z","level":"verbose"}
+{"msg":"#6 CACHED","section":"build.web                 →","timestamp":"2025-04-15T00:40:39.018Z","level":"verbose"}
+{"msg":"#7 [build 1/6] COPY . /usr/src/app","section":"build.web                 →","timestamp":"2025-04-15T00:40:39.019Z","level":"verbose"}
+{"msg":"#7 CACHED","section":"build.web                 →","timestamp":"2025-04-15T00:40:39.019Z","level":"verbose"}
+{"msg":"#8 [build 2/6] WORKDIR /usr/src/app","section":"build.web                 →","timestamp":"2025-04-15T00:40:39.019Z","level":"verbose"}
+{"msg":"#8 CACHED","section":"build.web                 →","timestamp":"2025-04-15T00:40:39.019Z","level":"verbose"}
+{"msg":"#9 [build 3/6] RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile","section":"build.web                 →","timestamp":"2025-04-15T00:40:39.019Z","level":"verbose"}
+{"msg":"#5 DONE 0.1s","section":"build.api                 →","timestamp":"2025-04-15T00:40:39.069Z","level":"verbose"}
+{"msg":"#6 [base 2/2] RUN corepack enable","section":"build.api                 →","timestamp":"2025-04-15T00:40:39.070Z","level":"verbose"}
+{"msg":"#6 CACHED","section":"build.api                 →","timestamp":"2025-04-15T00:40:39.070Z","level":"verbose"}
+{"msg":"#7 [build 1/6] COPY . /usr/src/app","section":"build.api                 →","timestamp":"2025-04-15T00:40:39.070Z","level":"verbose"}
+{"msg":"#7 CACHED","section":"build.api                 →","timestamp":"2025-04-15T00:40:39.070Z","level":"verbose"}
+{"msg":"#8 [build 2/6] WORKDIR /usr/src/app","section":"build.api                 →","timestamp":"2025-04-15T00:40:39.070Z","level":"verbose"}
+{"msg":"#8 CACHED","section":"build.api                 →","timestamp":"2025-04-15T00:40:39.070Z","level":"verbose"}
+{"msg":"#9 [build 3/6] RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile","section":"build.api                 →","timestamp":"2025-04-15T00:40:39.070Z","level":"verbose"}
+{"msg":"#9 0.532 ! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-10.8.1.tgz","section":"build.web                 →","timestamp":"2025-04-15T00:40:39.397Z","level":"verbose"}
+{"msg":"#9 0.637 ! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-10.8.1.tgz","section":"build.api                 →","timestamp":"2025-04-15T00:40:39.556Z","level":"verbose"}
+{"msg":"Done flushing all events and log entries.","section":"","timestamp":"2025-04-15T00:40:41.190Z","level":"debug"}

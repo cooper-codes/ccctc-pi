@@ -1,0 +1,44 @@
+kind: Build
+name: api
+type: container
+spec:
+  targetStage: api
+---
+kind: Build
+name: web
+type: container
+spec:
+  targetStage: web
+---
+kind: Deploy
+name: api
+type: container
+description: Deploy the API
+dependencies: [build.api]
+spec:
+  image: ${actions.build.api.outputs.deploymentImageId}
+  ports:
+    - name: http
+      containerPort: 3001
+  ingresses:
+    - path: /api
+      port: http
+  healthCheck:
+    httpGet:
+      path: /status
+      port: http
+
+---
+kind: Deploy
+name: web
+type: container
+description: Deploy the Web App
+dependencies: [deploy.api, build.web]
+spec:
+  image: ${actions.build.web.outputs.deploymentImageId}
+  ports:
+    - name: http
+      containerPort: 3000
+  ingresses:
+    - path: /
+      port: http
