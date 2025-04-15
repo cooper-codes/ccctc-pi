@@ -40,10 +40,16 @@ const App = () => {
         }
     }, [value])
 
+    const onKeyDownHandler = useCallback((event: React.KeyboardEvent) => {
+        if (event.key === 'Enter' && isValid) {
+            onClickHandler()
+        }
+    }, [isValid])
+
     return (
         <Wrapper>
             <Card>
-                <Input value={value} onChange={valueChangedHandler} />
+                <Input value={value} onChange={valueChangedHandler} onKeyDown={onKeyDownHandler} />
                 <Button disabled={!isValid || loading || hasSubmitted} onClick={onClickHandler}>Submit</Button>
                 <ErrorText text={errorMessage} />
                 <ResultText text={resultText} />
