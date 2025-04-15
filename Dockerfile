@@ -11,14 +11,14 @@ RUN pnpm run -r build
 RUN pnpm deploy --filter=api --prod /prod/api
 RUN pnpm deploy --filter=web --prod /prod/web
 
-FROM base AS api
-COPY --from=build /prod/api /prod/api
-WORKDIR /prod/api
-EXPOSE 3001
-CMD [ "pnpm", "start" ]
+FROM gcr.io/distroless/nodejs22-debian12 AS api
+COPY --from=build /prod/api/node_modules /app/node_modules
+COPY --from=build /prod/api/dist /app/dist
+COPY --from=build /prod/api/package.json /app/package.json
+WORKDIR /app
+CMD ["./dist/index.js" ]
 
 FROM base AS web
 COPY --from=build /prod/web /prod/web
 WORKDIR /prod/web
-EXPOSE 3000
 CMD [ "pnpm", "start" ]
