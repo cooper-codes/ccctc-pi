@@ -29,7 +29,5 @@ export const createServer = async (): Promise<Express> => {
 
   app.use('/', cors<cors.CorsRequest>(), express.json(), expressMiddleware(server))
 
-
-
   return app;
 };

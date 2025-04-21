@@ -1,7 +1,6 @@
 import { describe, it, expect } from "@jest/globals"
 
 import validate from '../helpers/inputValidator'
-import { defaultCacheSizes } from "@apollo/client/utilities"
 
 describe('input validator', () => {
 
